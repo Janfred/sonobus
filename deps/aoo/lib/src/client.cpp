@@ -1344,6 +1344,7 @@ void peer::send(time_tag now){
         // try to establish UDP connection with peer
         if (elapsed_time > client_->request_timeout()){
             // couldn't establish peer connection!
+	    // TODO: Add a little more debug info here then the generic info. Possibly the assumed IP address of the peer.
             LOG_ERROR("aoo_client: couldn't establish UDP connection to "
                       << *this << "; timed out after "
                       << client_->request_timeout() << " seconds");
